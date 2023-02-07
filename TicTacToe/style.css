@@ -1,3 +1,9 @@
+*{
+    padding:0;
+    margin: 0;
+    box-sizing: border-box;
+    background-color: darkslategray;
+}
 
 .cell{
     width: 75px;
@@ -7,19 +13,50 @@
     line-height: 75px;
     font-size: 50px;
     cursor: pointer;
-    background-color: aqua;
+    background-color:burlywood;
 }
 
 #gameContainer{
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     text-align: center;
+    background-color: darkslategray;
+
 }
 
 #cellContainer{
     display: grid;
+    align-content: center;
+    justify-content: center;
     grid-template-columns: repeat(3, auto);
     width: 225px;
     margin: auto;
     text-align: center;
+    background-color: burlywood;
+    
+    
+}
+#statusText{
+    color:burlywood;
+    margin-top: 10px;
+    margin-bottom: 15px;
+    text-decoration-line: underline;
+    text-decoration-style: double;
+}
+#title{
+    color: navajowhite;
+    margin-bottom: 15px;
+    text-decoration: underline;
+    text-decoration-color: burlywood;
+    text-decoration-style: wavy;
+    -webkit-text-stroke: 2px burlywood;
+    
 }
 
+#restartBtn{
+    margin-bottom: 10px;
+    border-radius: 25px;
+    height: 40px;
+    width: 70px;
+    cursor: grab;
+    background-color: burlywood;
+}
