@@ -44,31 +44,31 @@ function changePlayer(){ // funcion para que cambie de jugador
 function checkWinner(){ // funcion para ganar 
     let roundWon = false;
  
-    for(let i = 0; i < winConditions.length; i++){
+    for(let i = 0; i < winConditions.length; i++){      // recorro los diferentes elementos del array y al mismo tiempo verifico las condiciones para ganar
         const condition = winConditions[i];
-        const cellA = options[condition[0]];
+        const cellA = options[condition[0]];   // comparo los elementos de los arrays que recorro
         const cellB = options[condition[1]];
         const cellC = options[condition[2]];
 
-        if(cellA == "" || cellB == "" || cellC == ""){
+        if(cellA == "" || cellB == "" || cellC == ""){  //se sigue juganod mientras haya casillas vacias
             continue;
         }
-        if(cellA == cellB && cellB == cellC){
+        if(cellA == cellB && cellB == cellC){       //en caso de que  haya 3 iguales en fila hay un ganador
             roundWon = true;
             break;
         }
     }
 
-    if(roundWon){
+    if(roundWon){           //devuelve que hay un ganador 
         statusText.textContent = `${currentPlayer} wins!`;
         running = false;
     }
-    else if(!options.includes("")){
+    else if(!options.includes("")){     //devuelve un empate
         statusText.textContent = `Draw!`;
         running = false;
     }
     else{
-        changePlayer();
+        changePlayer();             //este else me permite seguir juganod mientras no haya ganador o empate
     }
 }
 function restartGame(){ // funcion para resetear el juego

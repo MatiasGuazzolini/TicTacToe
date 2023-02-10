@@ -2,7 +2,7 @@
     padding:0;
     margin: 0;
     box-sizing: border-box;
-    background-color: darkslategray;
+    
 }
 
 .cell{
@@ -14,31 +14,55 @@
     font-size: 50px;
     cursor: pointer;
     background-color:burlywood;
+    z-index: 2;
 }
 
 #gameContainer{
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     text-align: center;
+    position: relative;
+    z-index: 2;
+    display: grid;
+    height: 100vh;
+    align-content: center;
+    justify-content: center;
+    
 }
 
 #cellContainer{
     display: grid;
-    align-content: center;
-    justify-content: center;
+    place-content: center;
     grid-template-columns: repeat(3, auto);
     width: 225px;
     margin: auto;
     text-align: center;
     background-color: burlywood;
-    
-    
+    position: relative;
+    z-index: 2;
+    animation-duration: 3s;
+    animation-name: slidein3;
 }
+  
+@keyframes slidein {
+    from {
+      margin-left: 100%;
+    }
+  
+    to {
+      margin-left: 0%;
+    }
+  }
+    
 #statusText{
     color:burlywood;
     margin-top: 10px;
     margin-bottom: 15px;
     text-decoration-line: underline;
     text-decoration-style: double;
+    position: relative;
+    z-index: 2;
+    animation-duration: 3s;
+    animation-name: slidein3;
 }
 #title{
     color: navajowhite;
@@ -47,24 +71,66 @@
     text-decoration-color: burlywood;
     text-decoration-style: wavy;
     -webkit-text-stroke: 2px burlywood;
+    position: relative;
+    z-index: 2;
+    animation-duration: 3s;
+    animation-name: slidein;
 }
+  
+@keyframes slidein3 {
+    from {
+      margin-right: 0%;
+    }
+  
+    to {
+      margin-left: 0%;
+    }
+  }
+  
 
 #restartBtn{
     margin-bottom: 10px;
     border-radius: 25px;
     height: 40px;
-    width: 70px;
+    width: 225px;
     cursor: grab;
     background-color: burlywood;
+    position: relative;
+    z-index: 2;
+    animation-duration: 3s;
+    animation-name: slideinn;
+    display: grid;
+    align-content: center;
+    justify-content: center;
 }
-.video {
-    position: fixed;
-    top: 50%; left: 50%;
-    z-index: 1;
-    min-width: 100%;
-    min-height: 100%;
-    width: auto;
-    height: auto;
-    transform: translate(-50%, -50%);
+  
+@keyframes slideinn {
+    from {
+      margin-top: 100%;
+    }
+  
+    to {
+      margin-bottom: 0%;
+    }
   }
+  
+video{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    height: 100vh;
+}
+.capa{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vs;
+    background: #1c1c1c;
+    opacity: 0.7;
+    mix-blend-mode: overlay;
+}
 
